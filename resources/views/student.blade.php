@@ -6,11 +6,32 @@
     <section class="card">
         <div class="page-header">
             <div>
-                <h2>Student List</h2>
-                <p>Browse, review, and maintain all student records from one page.</p>
+                <p class="eyebrow">Student Records</p>
+                <h2>Student Workspace</h2>
+                <p>A cleaner card-based page for browsing and maintaining student records.</p>
             </div>
 
             <a href="{{ route('student.create') }}" class="button">Add Student</a>
+        </div>
+
+        <div class="detail-grid" style="margin-top: 0;">
+            <article class="detail-item">
+                <span>Total Students</span>
+                <strong>{{ $students->total() }}</strong>
+            </article>
+            <article class="detail-item">
+                <span>Current Page</span>
+                <strong>{{ $students->currentPage() }}</strong>
+            </article>
+        </div>
+    </section>
+
+    <section class="card">
+        <div class="page-header">
+            <div>
+                <h2>Student Table</h2>
+                <p>View, edit, and delete student records from the table below.</p>
+            </div>
         </div>
 
         <p class="table-meta">
@@ -26,16 +47,5 @@
         <div id="studentsTableRegion">
             @include('partials.students-table', ['students' => $students])
         </div>
-    </section>
-
-    <section class="card" id="studentDetailsCard" style="display: none;">
-        <div class="page-header">
-            <div>
-                <h2 id="studentDetailsTitle">Student Details</h2>
-                <p>Review the selected student record loaded through AJAX.</p>
-            </div>
-        </div>
-
-        <div id="studentDetails"></div>
     </section>
 @endsection

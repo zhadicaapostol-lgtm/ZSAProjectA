@@ -6,14 +6,26 @@
     <section class="card">
         <div class="page-header">
             <div>
-                <h2>Teacher List</h2>
-                <p>Browse, review, and maintain all teacher records from one page.</p>
+                <p class="eyebrow">Faculty Records</p>
+                <h2>Teacher Workspace</h2>
+                <p>Browse and maintain teacher records in the new split-panel layout.</p>
             </div>
 
             <a href="{{ route('teacher.create') }}" class="button">Add Teacher</a>
         </div>
 
-        <p class="table-meta">
+        <div class="detail-grid" style="margin-top: 0;">
+            <article class="detail-item">
+                <span>Total Teachers</span>
+                <strong>{{ $teachers->total() }}</strong>
+            </article>
+            <article class="detail-item">
+                <span>Current Page</span>
+                <strong>{{ $teachers->currentPage() }}</strong>
+            </article>
+        </div>
+
+        <p class="table-meta" style="margin-top: 18px;">
             @if ($teachers->count())
                 Showing {{ $teachers->firstItem() }} to {{ $teachers->lastItem() }} of {{ $teachers->total() }} teachers.
             @else

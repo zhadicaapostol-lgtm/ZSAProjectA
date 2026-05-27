@@ -6,14 +6,26 @@
     <section class="card">
         <div class="page-header">
             <div>
-                <h2>Degree List</h2>
+                <p class="eyebrow">Program Records</p>
+                <h2>Degree Workspace</h2>
                 <p>Maintain the degree catalog used by student profiles.</p>
             </div>
 
             <a href="{{ route('degree.create') }}" class="button">Add Degree</a>
         </div>
 
-        <p class="table-meta">
+        <div class="detail-grid" style="margin-top: 0;">
+            <article class="detail-item">
+                <span>Total Degrees</span>
+                <strong>{{ $degrees->total() }}</strong>
+            </article>
+            <article class="detail-item">
+                <span>Current Page</span>
+                <strong>{{ $degrees->currentPage() }}</strong>
+            </article>
+        </div>
+
+        <p class="table-meta" style="margin-top: 18px;">
             @if ($degrees->count())
                 Showing {{ $degrees->firstItem() }} to {{ $degrees->lastItem() }} of {{ $degrees->total() }} degrees.
             @else
