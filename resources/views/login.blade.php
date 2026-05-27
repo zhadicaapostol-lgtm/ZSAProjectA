@@ -188,7 +188,7 @@
         <section class="intro">
             <div class="eyebrow">Campus Portal</div>
             <h1>Student records access portal</h1>
-            <p>Sign in to manage student, teacher, and degree records with a cleaner pink-themed interface built for deployment.</p>
+            <p>Sign in to continue to your campus workspace.</p>
             <div class="intro-badges">
                 <div class="intro-badge">
                     <strong>Fast access</strong>
