@@ -5,30 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title', 'Campus Record Hub')</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:wght@600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-start: #f4efe6;
-            --bg-end: #dcefe8;
-            --surface: rgba(255, 252, 247, 0.88);
-            --surface-strong: #fffdf8;
-            --border: rgba(20, 68, 68, 0.14);
-            --text: #18312f;
-            --muted: #5f7673;
-            --heading: #143c3c;
-            --primary: #1b6b63;
-            --primary-dark: #124942;
-            --accent: #d97745;
-            --danger: #bd4c42;
-            --success-bg: #d9f0e5;
-            --success-text: #18533c;
-            --error-bg: #fde3da;
-            --error-text: #8d3125;
-            --shadow: 0 18px 45px rgba(20, 52, 52, 0.12);
+            --bg-start: #fff1f6;
+            --bg-end: #ffe1ec;
+            --surface: rgba(255, 252, 253, 0.92);
+            --surface-strong: #ffffff;
+            --border: rgba(214, 51, 132, 0.14);
+            --text: #31111f;
+            --muted: #7a5867;
+            --heading: #5c1537;
+            --primary: #d63384;
+            --primary-dark: #a61e63;
+            --accent: #f06292;
+            --danger: #c2415d;
+            --success-bg: #fce5ef;
+            --success-text: #8e1f53;
+            --error-bg: #ffe0e8;
+            --error-text: #a61e63;
+            --shadow: 0 18px 45px rgba(166, 30, 99, 0.12);
         }
 
-        * {
-            box-sizing: border-box;
-        }
+        * { box-sizing: border-box; }
 
         body {
             margin: 0;
@@ -36,20 +37,15 @@
             display: flex;
             flex-direction: column;
             color: var(--text);
-            font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+            font-family: "Inter", system-ui, sans-serif;
             background:
-                radial-gradient(circle at top left, rgba(217, 119, 69, 0.18), transparent 30%),
-                radial-gradient(circle at bottom right, rgba(27, 107, 99, 0.16), transparent 28%),
+                radial-gradient(circle at top left, rgba(214, 51, 132, 0.18), transparent 30%),
+                radial-gradient(circle at bottom right, rgba(240, 98, 146, 0.14), transparent 28%),
                 linear-gradient(145deg, var(--bg-start), var(--bg-end));
         }
 
-        h1,
-        h2,
-        h3,
-        h4,
-        th,
-        .brand-title {
-            font-family: Georgia, "Times New Roman", serif;
+        h1, h2, h3, h4, th, .brand-title {
+            font-family: "Fraunces", Georgia, serif;
             color: var(--heading);
         }
 
@@ -68,9 +64,9 @@
             align-items: center;
             gap: 20px;
             padding: 18px 22px;
-            border: 1px solid rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.45);
             border-radius: 24px;
-            background: rgba(18, 73, 66, 0.88);
+            background: linear-gradient(135deg, rgba(92, 21, 55, 0.96), rgba(166, 30, 99, 0.92));
             box-shadow: var(--shadow);
             backdrop-filter: blur(14px);
         }
@@ -80,7 +76,7 @@
             align-items: center;
             gap: 14px;
             text-decoration: none;
-            color: #fff6f0;
+            color: #fff6fb;
         }
 
         .brand-mark {
@@ -89,7 +85,7 @@
             display: grid;
             place-items: center;
             border-radius: 16px;
-            background: linear-gradient(135deg, #f7e4d8, #d6ece7);
+            background: linear-gradient(135deg, #ffe0ec, #ffd0e1);
             color: var(--primary-dark);
             font-weight: 800;
             letter-spacing: 0.08em;
@@ -98,13 +94,13 @@
         .brand-title {
             display: block;
             font-size: 1.4rem;
-            color: #fffdf8;
+            color: #fffdfd;
         }
 
         .brand-subtitle {
             display: block;
             margin-top: 2px;
-            color: rgba(255, 246, 240, 0.76);
+            color: rgba(255, 246, 251, 0.76);
             font-size: 0.9rem;
         }
 
@@ -118,7 +114,7 @@
             text-decoration: none;
             padding: 10px 16px;
             border-radius: 999px;
-            color: rgba(255, 248, 242, 0.9);
+            color: rgba(255, 248, 251, 0.94);
             border: 1px solid transparent;
             transition: 0.2s ease;
         }
@@ -126,7 +122,7 @@
         .nav-links a:hover,
         .nav-links a.active {
             color: var(--primary-dark);
-            background: #fff5ee;
+            background: #fff0f6;
             border-color: rgba(255, 255, 255, 0.5);
         }
 
@@ -216,7 +212,7 @@
             padding: 18px 20px;
             border-radius: 22px;
             background: var(--surface-strong);
-            border: 1px solid rgba(27, 107, 99, 0.1);
+            border: 1px solid rgba(214, 51, 132, 0.1);
         }
 
         .stat-tile span,
@@ -275,9 +271,9 @@
 
         .button,
         .action-btn {
-            background: var(--primary);
+            background: linear-gradient(135deg, var(--primary), var(--accent));
             color: #fffdf8;
-            box-shadow: 0 10px 24px rgba(27, 107, 99, 0.2);
+            box-shadow: 0 10px 24px rgba(214, 51, 132, 0.22);
         }
 
         .button:hover,
@@ -286,9 +282,9 @@
         }
 
         .button-secondary {
-            background: rgba(255, 248, 242, 0.78);
+            background: rgba(255, 240, 246, 0.92);
             color: var(--primary-dark);
-            border-color: rgba(27, 107, 99, 0.16);
+            border-color: rgba(214, 51, 132, 0.16);
             box-shadow: none;
         }
 
@@ -296,23 +292,23 @@
             padding: 8px 14px;
             margin-right: 8px;
             margin-bottom: 8px;
-            background: rgba(27, 107, 99, 0.1);
+            background: rgba(214, 51, 132, 0.1);
             color: var(--primary-dark);
-            border-color: rgba(27, 107, 99, 0.12);
+            border-color: rgba(214, 51, 132, 0.12);
             box-shadow: none;
         }
 
         .delete-btn {
-            background: rgba(189, 76, 66, 0.09);
+            background: rgba(194, 65, 93, 0.09);
             color: var(--danger);
-            border-color: rgba(189, 76, 66, 0.12);
+            border-color: rgba(194, 65, 93, 0.12);
         }
 
         .table-box {
             overflow-x: auto;
             border-radius: 22px;
-            border: 1px solid rgba(27, 107, 99, 0.12);
-            background: rgba(255, 253, 248, 0.9);
+            border: 1px solid rgba(214, 51, 132, 0.12);
+            background: rgba(255, 253, 248, 0.96);
         }
 
         table {
@@ -331,11 +327,11 @@
             font-size: 0.76rem;
             letter-spacing: 0.12em;
             text-transform: uppercase;
-            background: rgba(27, 107, 99, 0.08);
+            background: rgba(214, 51, 132, 0.08);
         }
 
         td {
-            border-top: 1px solid rgba(20, 68, 68, 0.08);
+            border-top: 1px solid rgba(166, 30, 99, 0.08);
         }
 
         tr:nth-child(even) td {
@@ -353,8 +349,8 @@
             align-items: center;
             padding: 7px 12px;
             border-radius: 999px;
-            background: rgba(217, 119, 69, 0.14);
-            color: #8c4a20;
+            background: rgba(240, 98, 146, 0.14);
+            color: #9a1f5b;
             font-size: 0.84rem;
             font-weight: 700;
         }
@@ -381,13 +377,13 @@
             padding: 10px 14px;
             border-radius: 999px;
             text-decoration: none;
-            background: rgba(255, 248, 242, 0.86);
+            background: rgba(255, 240, 246, 0.9);
             color: var(--primary-dark);
-            border: 1px solid rgba(27, 107, 99, 0.12);
+            border: 1px solid rgba(214, 51, 132, 0.12);
         }
 
         .pagination .active-page {
-            background: var(--primary);
+            background: linear-gradient(135deg, var(--primary), var(--accent));
             color: #fffdf8;
         }
 
@@ -419,7 +415,7 @@
             width: 100%;
             padding: 13px 15px;
             border-radius: 16px;
-            border: 1px solid rgba(27, 107, 99, 0.16);
+            border: 1px solid rgba(214, 51, 132, 0.16);
             background: rgba(255, 255, 255, 0.9);
             color: var(--text);
             font-size: 0.98rem;
@@ -429,8 +425,8 @@
         select:focus,
         textarea:focus {
             outline: none;
-            border-color: rgba(27, 107, 99, 0.55);
-            box-shadow: 0 0 0 4px rgba(27, 107, 99, 0.12);
+            border-color: rgba(214, 51, 132, 0.55);
+            box-shadow: 0 0 0 4px rgba(214, 51, 132, 0.12);
         }
 
         .message {
@@ -453,27 +449,17 @@
         .message-success {
             background: var(--success-bg);
             color: var(--success-text);
-            border-color: rgba(24, 83, 60, 0.14);
+            border-color: rgba(142, 31, 83, 0.14);
         }
 
         .message-error {
             background: var(--error-bg);
             color: var(--error-text);
-            border-color: rgba(141, 49, 37, 0.12);
+            border-color: rgba(166, 30, 99, 0.12);
         }
 
         .inline-form {
             display: inline;
-        }
-
-        #studentMessage:empty {
-            display: none;
-        }
-
-        .info-list {
-            margin: 16px 0 0;
-            padding-left: 18px;
-            line-height: 1.7;
         }
 
         .footer {
@@ -483,8 +469,8 @@
         .footer-inner {
             padding: 18px 22px;
             border-radius: 22px;
-            background: rgba(20, 60, 60, 0.88);
-            color: rgba(255, 250, 244, 0.8);
+            background: linear-gradient(135deg, rgba(92, 21, 55, 0.96), rgba(166, 30, 99, 0.92));
+            color: rgba(255, 250, 244, 0.82);
             text-align: center;
             box-shadow: var(--shadow);
         }
@@ -520,8 +506,9 @@
         <div class="container">
             <div class="navbar-content">
                 <a href="{{ route('dashboard') }}" class="brand">
-                    <span class="brand-mark">SDM</span>
+                    <span class="brand-mark">ZSA</span>
                     <span>
+                        <span class="brand-title">ZSAProjectA</span>
                         <span class="brand-subtitle">Student and degree management</span>
                     </span>
                 </a>
@@ -549,9 +536,7 @@
     <main class="main-content">
         <div class="container">
             @if (session('success'))
-                <div class="message message-success">
-                    {{ session('success') }}
-                </div>
+                <div class="message message-success">{{ session('success') }}</div>
             @endif
 
             @if ($errors->any())
@@ -572,7 +557,7 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-inner">
-                <p>&copy; {{ date('Y') }} Student Management.</p>
+                <p>&copy; {{ date('Y') }} ZSAProjectA.</p>
             </div>
         </div>
     </footer>
