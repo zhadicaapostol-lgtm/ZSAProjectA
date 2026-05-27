@@ -42,22 +42,27 @@
         }
 
         .shell {
-            width: min(980px, 100%);
+            width: min(1080px, 100%);
             display: grid;
-            grid-template-columns: minmax(0, 1.1fr) minmax(320px, 420px);
+            grid-template-columns: minmax(0, 1.15fr) minmax(340px, 0.85fr);
             overflow: hidden;
-            border-radius: 28px;
+            border-radius: 32px;
             background: var(--card);
             border: 1px solid var(--border);
             box-shadow: var(--shadow);
         }
 
         .intro, .panel {
-            padding: 40px 34px;
+            padding: 44px 38px;
         }
 
         .intro {
-            background: linear-gradient(160deg, rgba(92, 21, 55, 0.98), rgba(166, 30, 99, 0.94));
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background:
+                radial-gradient(circle at top right, rgba(240, 98, 146, 0.16), transparent 22%),
+                linear-gradient(160deg, rgba(92, 21, 55, 0.98), rgba(166, 30, 99, 0.94));
             color: #fffaf4;
         }
 
@@ -70,6 +75,29 @@
             max-width: 44ch;
             line-height: 1.7;
             color: rgba(255, 250, 244, 0.82);
+        }
+
+        .intro-badges {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+            margin-top: 26px;
+        }
+
+        .intro-badge {
+            padding: 14px 16px;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.10);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: rgba(255, 250, 244, 0.92);
+        }
+
+        .intro-badge strong {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 0.92rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
         }
 
         .eyebrow {
@@ -88,6 +116,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            background: rgba(255, 251, 253, 0.95);
         }
 
         .panel p {
@@ -140,8 +169,17 @@
             box-shadow: 0 10px 24px rgba(214, 51, 132, 0.22);
         }
 
+        .login-footnote {
+            margin-top: 18px;
+            padding-top: 18px;
+            border-top: 1px solid rgba(214, 51, 132, 0.12);
+            color: var(--muted);
+            font-size: 0.92rem;
+        }
+
         @media (max-width: 820px) {
             .shell { grid-template-columns: 1fr; }
+            .intro-badges { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -151,6 +189,16 @@
             <div class="eyebrow">Campus Portal</div>
             <h1>Student records access portal</h1>
             <p>Sign in to manage student, teacher, and degree records with a cleaner pink-themed interface built for deployment.</p>
+            <div class="intro-badges">
+                <div class="intro-badge">
+                    <strong>Fast access</strong>
+                    One login for the whole campus workspace.
+                </div>
+                <div class="intro-badge">
+                    <strong>Deploy ready</strong>
+                    Styled with no build-step dependency.
+                </div>
+            </div>
         </section>
 
         <section class="panel">
@@ -179,6 +227,10 @@
 
                 <button type="submit">Log In</button>
             </form>
+
+            <div class="login-footnote">
+                Use your assigned account details to continue into the dashboard.
+            </div>
         </section>
     </main>
 </body>

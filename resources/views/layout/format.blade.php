@@ -59,14 +59,15 @@
         }
 
         .navbar-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            display: grid;
+            grid-template-columns: auto minmax(0, 1fr);
             gap: 20px;
-            padding: 18px 22px;
+            padding: 20px;
             border: 1px solid rgba(255, 255, 255, 0.45);
-            border-radius: 24px;
-            background: linear-gradient(135deg, rgba(92, 21, 55, 0.96), rgba(166, 30, 99, 0.92));
+            border-radius: 30px;
+            background:
+                radial-gradient(circle at top right, rgba(240, 98, 146, 0.18), transparent 24%),
+                linear-gradient(135deg, rgba(92, 21, 55, 0.98), rgba(166, 30, 99, 0.92));
             box-shadow: var(--shadow);
             backdrop-filter: blur(14px);
         }
@@ -107,6 +108,7 @@
         .nav-links {
             display: flex;
             flex-wrap: wrap;
+            justify-content: flex-end;
             gap: 10px;
         }
 
@@ -145,6 +147,9 @@
         .hero-card {
             padding: 34px;
             margin-bottom: 24px;
+            background:
+                linear-gradient(135deg, rgba(255,255,255,0.92), rgba(255,255,255,0.82)),
+                radial-gradient(circle at top right, rgba(240, 98, 146, 0.10), transparent 30%);
         }
 
         .card {
@@ -161,7 +166,7 @@
         }
 
         .hero-grid {
-            grid-template-columns: minmax(0, 1.5fr) minmax(280px, 0.95fr);
+            grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.9fr);
             align-items: center;
         }
 
@@ -279,6 +284,10 @@
         .button:hover,
         .action-btn:hover {
             transform: translateY(-1px);
+        }
+
+        .button-secondary:hover {
+            background: #ffe6f0;
         }
 
         .button-secondary {
@@ -469,7 +478,9 @@
         .footer-inner {
             padding: 18px 22px;
             border-radius: 22px;
-            background: linear-gradient(135deg, rgba(92, 21, 55, 0.96), rgba(166, 30, 99, 0.92));
+            background:
+                radial-gradient(circle at left top, rgba(240, 98, 146, 0.12), transparent 22%),
+                linear-gradient(135deg, rgba(92, 21, 55, 0.96), rgba(166, 30, 99, 0.92));
             color: rgba(255, 250, 244, 0.82);
             text-align: center;
             box-shadow: var(--shadow);
@@ -487,6 +498,10 @@
             .form-grid {
                 grid-template-columns: 1fr;
                 display: grid;
+            }
+
+            .nav-links {
+                justify-content: flex-start;
             }
         }
 
